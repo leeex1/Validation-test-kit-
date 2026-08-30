@@ -1,0 +1,9 @@
+{
+  "name": "NextVerse & Quillan Formula Validation Suite",
+  "description": "Comprehensive mathematical engine and simulation suite for 23 Quillan Custom Formulas and 11 NextVerse Core Engine formulas with Compound Turbo Feedback, Hardware Profiling, and VM Control.",
+  "requestFramePermissions": [],
+  "prompt": "",
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
