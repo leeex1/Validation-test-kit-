@@ -6,7 +6,7 @@
 Runs automatically on Windows startup to ensure the PC runs butter-smooth 24/7:
   1. Boot-time total box tuning (0.5ms kernel timer, CPU unparking, RAM purge)
   2. Persistent background Lee-Mach-6 thermodynamic governor
-  3. Automatic periodic WorkingSet trimming every 60s
+  3. Lightweight self WorkingSet trim (own process only) every 30s when RAM > 75%
   4. Validation test kit backend server on port 5000
 """
 
