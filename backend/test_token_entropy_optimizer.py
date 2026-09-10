@@ -9,8 +9,8 @@ import unittest
 from pathlib import Path
 
 # Add project root to sys.path
-sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
-from oni.token_entropy_optimizer import TokenEntropyOptimizer, CompressionResult, CacheablePayload
+sys.path.insert(0, r"C:\02_QUILLAN\09 - Projects\projects\oni")
+from token_entropy_optimizer import TokenEntropyOptimizer, CompressionResult, CacheablePayload
 
 
 class TestTokenEntropyOptimizer(unittest.TestCase):

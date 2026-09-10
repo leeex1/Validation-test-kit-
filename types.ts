@@ -17,7 +17,7 @@ export interface SimulatedLoad {
   thermodynamic?: number; // E_ICE load indicator 0 - 100%
 }
 
-export type FormulaSuite = 'quillan' | 'nextverse';
+export type FormulaSuite = 'quillan' | 'nextverse' | 'foundation';
 
 export interface FormulaDefinition {
   id: string;

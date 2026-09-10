@@ -1,7 +1,7 @@
 {
   "name": "nextverse-formula-validation-suite-&-vm-control",
   "private": true,
-  "version": "0.0.0",
+  "version": "3.5.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -40,7 +40,7 @@ import {
 
 const PYTHON_BACKEND_URL = 'http://localhost:5000';
 
-type ViewTab = 'all' | 'quillan' | 'nextverse' | 'compound-turbo' | 'vm-control';
+type ViewTab = 'all' | 'quillan' | 'nextverse' | 'foundation' | 'compound-turbo' | 'vm-control';
 
 const App: React.FC = () => {
   // Initialize all 34 formulas
@@ -253,6 +253,7 @@ const App: React.FC = () => {
       // Tab filter
       if (activeTab === 'quillan' && f.suite !== 'quillan') return false;
       if (activeTab === 'nextverse' && f.suite !== 'nextverse') return false;
+      if (activeTab === 'foundation' && f.suite !== 'foundation') return false;
 
       // Category filter
       if (selectedCategory !== 'all' && f.category !== selectedCategory) return false;
@@ -304,7 +305,7 @@ const App: React.FC = () => {
                 </span>
               </div>
               <p className="text-xs text-gray-400">
-                34 Rigorous Formulas: 23 Quillan AGI + 11 NextVerse Min-Maxed Core Engine
+                68 Rigorous Formulas: 23 Quillan AGI + 11 NextVerse Min-Maxed Core Engine + 34 Foundation (Physics/CS/ML)
               </p>
             </div>
           </div>
@@ -374,6 +375,17 @@ const App: React.FC = () => {
             <span>NextVerse Platform Core</span>
             <span className="px-1.5 py-0.2 rounded-full text-[10px] bg-black/40 text-cyan-200 font-mono">11</span>
           </button>
+            <button
+              onClick={() => setActiveTab('foundation')}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                activeTab === 'foundation'
+                  ? 'bg-amber-600 text-white shadow-lg'
+                  : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              }`}
+            >
+              <Layers size={16} />
+              <span>Foundation Ledger</span>
+            </button>
 
           <button
             onClick={() => setActiveTab('compound-turbo')}
@@ -524,7 +536,7 @@ const App: React.FC = () => {
         )}
 
         {/* Search & Category Filter Bar */}
-        {(activeTab === 'all' || activeTab === 'quillan' || activeTab === 'nextverse') && (
+        {(activeTab === 'all' || activeTab === 'quillan' || activeTab === 'nextverse' || activeTab === 'foundation') && (
           <div>
             <div className="flex flex-col md:flex-row items-center justify-between gap-3 mb-6 p-3 rounded-xl bg-gray-900 border border-gray-800">
               {/* Search Bar */}

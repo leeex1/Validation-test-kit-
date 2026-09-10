@@ -1,13 +1,16 @@
 import { FormulaDefinition, HardwareProfile, SimulatedLoad } from './types';
 import { QUILLAN_FORMULAS } from './quillanFormulas';
 import { NEXTVERSE_FORMULAS } from './nextverseFormulas';
+import { FOUNDATION_FORMULAS } from './foundationFormulas';
 
 export { QUILLAN_FORMULAS } from './quillanFormulas';
 export { NEXTVERSE_FORMULAS } from './nextverseFormulas';
+export { FOUNDATION_FORMULAS } from './foundationFormulas';
 
 export const ALL_FORMULAS: FormulaDefinition[] = [
   ...QUILLAN_FORMULAS,
-  ...NEXTVERSE_FORMULAS
+  ...NEXTVERSE_FORMULAS,
+  ...FOUNDATION_FORMULAS
 ];
 
 // Default backwards compatibility
