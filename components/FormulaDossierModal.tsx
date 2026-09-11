@@ -47,7 +47,7 @@ const FormulaDossierModal: React.FC<FormulaDossierModalProps> = ({
                 {formula.name}
               </h2>
               <span className="text-xs text-gray-400">
-                {formula.suite === 'quillan' ? 'Quillan AGI Mathematical Engine' : 'NextVerse Min-Maxed Engine'} • {formula.category || 'Core'}
+                {formula.suite === 'quillan' ? 'Quillan AGI Mathematical Engine' : formula.suite === 'foundation' ? 'Foundation Canonical Ledger' : 'NextVerse Min-Maxed Engine'} • {formula.category || 'Core'}
               </span>
             </div>
           </div>
@@ -166,11 +166,11 @@ const FormulaDossierModal: React.FC<FormulaDossierModalProps> = ({
                 <span className="text-xs text-gray-500 block mt-0.5">Metric: {formula.targetMetric}</span>
               </div>
 
-              {resultData?.result && (
+              {resultData && (
                 <div className="sm:text-right">
                   <span className="text-xs text-gray-400 block">Latest Live Run Result</span>
                   <span className="text-xl font-bold font-mono text-emerald-400">
-                    {resultData.result.primaryResult.toLocaleString(undefined, { maximumFractionDigits: 4 })} {formula.primaryUnit || ''}
+                    {resultData.primaryResult.toLocaleString(undefined, { maximumFractionDigits: 4 })} {formula.primaryUnit || ''}
                   </span>
                   <span className="text-xs text-emerald-500 block">
                     Execution Time: {resultData.executionTimeMs?.toFixed(2)} ms

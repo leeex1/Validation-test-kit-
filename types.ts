@@ -26,6 +26,7 @@ export interface FormulaDefinition {
   suite: FormulaSuite;
   name: string;
   concept: string;
+  description?: string;
   derivationBase: string;
   formulaLatex: string;
   formulaString: string;
