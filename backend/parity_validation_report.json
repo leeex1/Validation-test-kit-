@@ -1,0 +1,162 @@
+{
+  "matched": 31,
+  "total": 31,
+  "parity_rate": 100.0,
+  "comparisons": {
+    "F_NEWTON_2ND": {
+      "python": 6.0,
+      "typescript": 6,
+      "diff": 0.0
+    },
+    "F_KINETIC": {
+      "python": 9.0,
+      "typescript": 9,
+      "diff": 0.0
+    },
+    "F_GRAVITATION": {
+      "python": 9816.2431640625,
+      "typescript": 9816.243509027341,
+      "diff": 0.0003449648411333328
+    },
+    "F_ORBITAL": {
+      "python": 7671.033203125,
+      "typescript": 7671.033155168897,
+      "diff": 4.795610311703058e-05
+    },
+    "F_ESCAPE": {
+      "python": 11183.853515625,
+      "typescript": 11183.853306979056,
+      "diff": 0.00020864594443992246
+    },
+    "F_SHO": {
+      "python": 1.9869177341461182,
+      "typescript": 1.9869176531592203,
+      "diff": 8.098689785462909e-08
+    },
+    "F_IDEAL_GAS": {
+      "python": 292.4945983886719,
+      "typescript": 292.4945874428675,
+      "diff": 1.0945804376660817e-05
+    },
+    "F_STEFAN": {
+      "python": 52.4174919128418,
+      "typescript": 52.4175057,
+      "diff": 1.3787158202660521e-05
+    },
+    "F_LORENTZ": {
+      "python": 1.0005568265914917,
+      "typescript": 1.0005567897052046,
+      "diff": 3.6886287135828866e-08
+    },
+    "F_MAXWELL_GAUSS_E": {
+      "python": 112943.3046875,
+      "typescript": 112943.30246216399,
+      "diff": 0.0022253360075410455
+    },
+    "C_ENTROPY": {
+      "python": 3.0,
+      "typescript": 3,
+      "diff": 0.0
+    },
+    "C_KL": {
+      "python": 0.08228287850505178,
+      "typescript": 0.08228287850505181,
+      "diff": 2.7755575615628914e-17
+    },
+    "C_BAYES": {
+      "python": 40.00000357627869,
+      "typescript": 40.00000000000001,
+      "diff": 3.57627867941801e-06
+    },
+    "C_HANDSHAKE": {
+      "python": 1122.0,
+      "typescript": 1122,
+      "diff": 0.0
+    },
+    "C_CATALAN": {
+      "python": 42.0,
+      "typescript": 42,
+      "diff": 0.0
+    },
+    "C_FIB": {
+      "python": 55.0,
+      "typescript": 55,
+      "diff": 0.0
+    },
+    "C_MASTER": {
+      "python": 1.0,
+      "typescript": 1,
+      "diff": 0.0
+    },
+    "C_MI": {
+      "python": 3.9,
+      "typescript": 3.9,
+      "diff": 0.0
+    },
+    "C_DFT_K1": {
+      "python": 1.0,
+      "typescript": 1,
+      "diff": 0.0
+    },
+    "C_CAYLEY": {
+      "python": 16.0,
+      "typescript": 16,
+      "diff": 0.0
+    },
+    "M_SIGMOID": {
+      "python": 0.622459352016449,
+      "typescript": 0.6224593312018546,
+      "diff": 2.0814594381413087e-08
+    },
+    "M_TANH": {
+      "python": 0.46211716532707214,
+      "typescript": 0.46211715726000974,
+      "diff": 8.067062406968972e-09
+    },
+    "M_SOFTMAX3": {
+      "python": 62.853171921176255,
+      "typescript": 62.853171921176255,
+      "diff": 0.0
+    },
+    "M_CE": {
+      "python": 0.35667494393873245,
+      "typescript": 0.35667494393873245,
+      "diff": 0.0
+    },
+    "M_MSE": {
+      "python": 0.25,
+      "typescript": 0.25,
+      "diff": 0.0
+    },
+    "M_GD": {
+      "python": 99.37999725341797,
+      "typescript": 99.38,
+      "diff": 2.7465820267025265e-06
+    },
+    "M_NORMAL_EQ": {
+      "python": 1.2128785512842122,
+      "typescript": 1.2128785512842124,
+      "diff": 2.220446049250313e-16
+    },
+    "M_GAUSSIAN": {
+      "python": 0.3520653247833252,
+      "typescript": 0.3520653267642995,
+      "diff": 1.980974329018892e-09
+    },
+    "M_BELLMAN": {
+      "python": 5.949999809265137,
+      "typescript": 5.95,
+      "diff": 1.9073486345888568e-07
+    },
+    "M_RETURN": {
+      "python": 5.0,
+      "typescript": 5,
+      "diff": 0.0
+    },
+    "M_CONDH": {
+      "python": 0.9000000000000004,
+      "typescript": 0.9000000000000004,
+      "diff": 0.0
+    }
+  }
+}

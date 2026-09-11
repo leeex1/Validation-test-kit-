@@ -1,0 +1,908 @@
+{
+  "passed": 68,
+  "total": 68,
+  "total_time_ms": 535.4777,
+  "throughput_evals_sec": 1269894,
+  "suites": {
+    "quillan": 23,
+    "nextverse": 11,
+    "foundation": 34
+  },
+  "results": {
+    "AQCS": {
+      "id": "AQCS",
+      "name": "Adaptive Quantum Cognitive Superposition",
+      "suite": "quillan",
+      "primaryResult": 9.389925139156157,
+      "speedupFactor": 54.752201782618116,
+      "secondaryMetrics": {
+        "Partition Function (Z)": "0.027084",
+        "Coherence Index": "63.4%",
+        "Active Vector Fusion": "34/34 nodes"
+      },
+      "avg_latency_us": 0.578,
+      "status": "PASSED"
+    },
+    "EEMF": {
+      "id": "EEMF",
+      "name": "Ethical Entanglement Matrix",
+      "suite": "quillan",
+      "primaryResult": 86.71259519999998,
+      "speedupFactor": 1.392,
+      "secondaryMetrics": {
+        "Density Matrix Trace Tr(ρ)": "0.9128",
+        "Noise Suppression Rate": "92.0%",
+        "Projector Stability (Π²=Π)": "Passed (Idempotent)"
+      },
+      "avg_latency_us": 0.495,
+      "status": "PASSED"
+    },
+    "QHIS": {
+      "id": "QHIS",
+      "name": "Quantum Holographic Interference Sum",
+      "suite": "quillan",
+      "primaryResult": 5.4796000000000005,
+      "speedupFactor": 5.5296,
+      "secondaryMetrics": {
+        "Informational Flux (ℐ_Q)": "5.480 bits/step",
+        "Mach-6 Acceleration": "6.0x",
+        "Drift Penalty Active": "0.0500"
+      },
+      "avg_latency_us": 0.707,
+      "status": "PASSED"
+    },
+    "DQRO": {
+      "id": "DQRO",
+      "name": "Dynamic Quantum Resource Optimization",
+      "suite": "quillan",
+      "primaryResult": 1646.08,
+      "speedupFactor": 3.887418300653595,
+      "secondaryMetrics": {
+        "Ground State Energy (ℋ_opt)": "-1646.1 eV_cog",
+        "Annealing Transverse Driver": "0.35 ℰ_Ω",
+        "Spin Order Parameter": "100.0%"
+      },
+      "avg_latency_us": 0.715,
+      "status": "PASSED"
+    },
+    "QCRDM": {
+      "id": "QCRDM",
+      "name": "Quantum Contextual Reasoning",
+      "suite": "quillan",
+      "primaryResult": 81.50926373599998,
+      "speedupFactor": 1.6520741098879999,
+      "secondaryMetrics": {
+        "Deduction Probability P(d|M)": "0.8151",
+        "Born Amplitude Squared": "0.7088",
+        "Context Subspace Filter": "97.0%"
+      },
+      "avg_latency_us": 0.674,
+      "status": "PASSED"
+    },
+    "AQML": {
+      "id": "AQML",
+      "name": "Adaptive Quantum Meta-Learning",
+      "suite": "quillan",
+      "primaryResult": 98.801,
+      "speedupFactor": 1.2398,
+      "secondaryMetrics": {
+        "Total Gradient Step": "1.199",
+        "Vigil Anti-Bleed Suppression": "98.1%",
+        "Task-to-Validation Ratio": "2.55"
+      },
+      "avg_latency_us": 0.646,
+      "status": "PASSED"
+    },
+    "QCIE": {
+      "id": "QCIE",
+      "name": "Quantum Creative Intelligence Engine",
+      "suite": "quillan",
+      "primaryResult": 49.38449472872032,
+      "speedupFactor": 3.469224736436016,
+      "secondaryMetrics": {
+        "Breakthrough Probability (T_break)": "0.49384",
+        "Net Forbidden Barrier Height": "0.14 eV_cog",
+        "Entropy Barrier Reduction": "3.36 eV_cog"
+      },
+      "avg_latency_us": 0.758,
+      "status": "PASSED"
+    },
+    "QICS": {
+      "id": "QICS",
+      "name": "Quantum Information Communication",
+      "suite": "quillan",
+      "primaryResult": 3.2051474866466783,
+      "speedupFactor": 1.8012868716616697,
+      "secondaryMetrics": {
+        "Raw Entropy Calculated": "3.205 nats",
+        "Thermodynamic Cap (ℰ_Ω)": "4.85 nats",
+        "Cap Utilization": "66.1%"
+      },
+      "avg_latency_us": 2.321,
+      "status": "PASSED"
+    },
+    "QSSR": {
+      "id": "QSSR",
+      "name": "Quantum System Stability Resilience",
+      "suite": "quillan",
+      "primaryResult": 2.886,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "Lyapunov State Energy": "0.486",
+        "Recursion Penalty (ζ·d²)": "2.400",
+        "Halt Threshold Limit": "12.0 V_crit"
+      },
+      "avg_latency_us": 0.538,
+      "status": "PASSED"
+    },
+    "JQLD": {
+      "id": "JQLD",
+      "name": "Joshua's Quantum Leap Dynamo",
+      "suite": "quillan",
+      "primaryResult": 671.7837539065014,
+      "speedupFactor": 671.7837539065014,
+      "secondaryMetrics": {
+        "State Evolution Rate ||dρ/dt||": "5.462 rad/s",
+        "Gumbel Jump Dispersion": "3.060",
+        "Exploration Diversity Gain": "36.0%"
+      },
+      "avg_latency_us": 0.872,
+      "status": "PASSED"
+    },
+    "DQSO": {
+      "id": "DQSO",
+      "name": "Dynamic Quantum Swarm Oscillation",
+      "suite": "quillan",
+      "primaryResult": 25.363843287796843,
+      "speedupFactor": 9.472186812737313,
+      "secondaryMetrics": {
+        "Kuramoto Order Parameter (R)": "94.7% (Synchronized)",
+        "Consensus Latency": "11.24 ms",
+        "Agent Swarm Count": "9.0 Billion microagents"
+      },
+      "avg_latency_us": 0.672,
+      "status": "PASSED"
+    },
+    "EVOMOE_NOAUX_TC": {
+      "id": "EVOMOE_NOAUX_TC",
+      "name": "EvoMoE Dense Pull noaux_tc Routing",
+      "suite": "quillan",
+      "primaryResult": 51.08713960000725,
+      "speedupFactor": 3.04348558400029,
+      "secondaryMetrics": {
+        "Top-1 Pull Weight": "51.09%",
+        "Shared Expert Gain": "+100% Invariant",
+        "Softmax Routing Entropy": "0.343 nats"
+      },
+      "avg_latency_us": 0.597,
+      "status": "PASSED"
+    },
+    "TOKEN_LATENCY": {
+      "id": "TOKEN_LATENCY",
+      "name": "Hyper Quantized Swarm Compute Latency",
+      "suite": "quillan",
+      "primaryResult": 1.0730666666666666,
+      "speedupFactor": 43.05417495029822,
+      "secondaryMetrics": {
+        "Throughput Rate": "931.9 tokens/sec",
+        "Mach-6 Acceleration Multiplier": "6.0x",
+        "Network Comm Overhead": "1.638 ms"
+      },
+      "avg_latency_us": 0.651,
+      "status": "PASSED"
+    },
+    "LRPP": {
+      "id": "LRPP",
+      "name": "Lee's Recursive Power Pulse",
+      "suite": "quillan",
+      "primaryResult": 0.5199999999999998,
+      "speedupFactor": 2.896,
+      "secondaryMetrics": {
+        "ODE Rate of Change (dh/dt)": "0.520 units/s",
+        "Nemesis Braking Force": "0.780",
+        "Memory Equilibrium Status": "Charging"
+      },
+      "avg_latency_us": 0.878,
+      "status": "PASSED"
+    },
+    "DVVE": {
+      "id": "DVVE",
+      "name": "Dynamic Virtual Value Equilibrium",
+      "suite": "quillan",
+      "primaryResult": 1.97,
+      "speedupFactor": 1.5076142131979695,
+      "secondaryMetrics": {
+        "Variational Free Energy (ℱ_Q)": "1.970 nats",
+        "Moral Alignment Compliance": "92.0%",
+        "Cognitive Equilibrium Quality": "60.6/100"
+      },
+      "avg_latency_us": 0.971,
+      "status": "PASSED"
+    },
+    "DNNL": {
+      "id": "DNNL",
+      "name": "Dynamic Neural Network Latency",
+      "suite": "quillan",
+      "primaryResult": 2.7048922368845676,
+      "speedupFactor": 36.970049540745364,
+      "secondaryMetrics": {
+        "Server Utilization (ρ)": "72.9%",
+        "Erlang-C Delay Probability": "15.9%",
+        "Warden Interrupt Overhead": "2.40 ms"
+      },
+      "avg_latency_us": 0.851,
+      "status": "PASSED"
+    },
+    "JHFR": {
+      "id": "JHFR",
+      "name": "Joint Human-Factor Resource",
+      "suite": "quillan",
+      "primaryResult": -2.1599999999999997,
+      "speedupFactor": 2.625,
+      "secondaryMetrics": {
+        "Information Bottleneck Loss": "-2.160",
+        "Intent Compression Efficiency": "81.3%",
+        "Council Anchor Tethering": "96.3% Alignment"
+      },
+      "avg_latency_us": 0.63,
+      "status": "PASSED"
+    },
+    "LMCB": {
+      "id": "LMCB",
+      "name": "Lee-Mach-6 Cognitive Binding",
+      "suite": "quillan",
+      "primaryResult": 23.556399999999996,
+      "speedupFactor": 3.3556399999999997,
+      "secondaryMetrics": {
+        "Binding Hopfield Energy": "-23.56 E_bind",
+        "Cross-Modal Agreement Score": "97.0%",
+        "Bound Modalities Count": "5 Streams (10 Tensor pairs)"
+      },
+      "avg_latency_us": 0.559,
+      "status": "PASSED"
+    },
+    "JSSC": {
+      "id": "JSSC",
+      "name": "Joint Semantic-Symbolic Coherence",
+      "suite": "quillan",
+      "primaryResult": 0.45888520565271745,
+      "speedupFactor": 3.1791942465820004,
+      "secondaryMetrics": {
+        "Wasserstein-2 Transport Cost": "0.4589 W_Q",
+        "Semantic-Symbolic Fidelity": "86.2%",
+        "Manifold Curvature Tensor": "1.60 g_LM6"
+      },
+      "avg_latency_us": 0.767,
+      "status": "PASSED"
+    },
+    "QPS": {
+      "id": "QPS",
+      "name": "Quantum Process Synthesis",
+      "suite": "quillan",
+      "primaryResult": 3.037695281078004,
+      "speedupFactor": 4.291969429024245,
+      "secondaryMetrics": {
+        "Riccati Cost-to-Go (P_t)": "3.038",
+        "Thermodynamic R Penalty": "0.62",
+        "State Cost Q": "2.30"
+      },
+      "avg_latency_us": 0.934,
+      "status": "PASSED"
+    },
+    "EGSO": {
+      "id": "EGSO",
+      "name": "Evolution Guided Swarm Optimization",
+      "suite": "quillan",
+      "primaryResult": 2.293333333333333,
+      "speedupFactor": 10.126582278481012,
+      "secondaryMetrics": {
+        "Master Weight Delta ||ΔW||": "2.2933",
+        "BitNet Compression": "10.1x Memory Reduction",
+        "Low-Rank Rank (r)": "rank=4 (1.58 bits/param)"
+      },
+      "avg_latency_us": 0.462,
+      "status": "PASSED"
+    },
+    "RQGM": {
+      "id": "RQGM",
+      "name": "Controlled Utility Evolution (TIRG)",
+      "suite": "quillan",
+      "primaryResult": 6.400000000000006,
+      "speedupFactor": 2.5,
+      "secondaryMetrics": {
+        "Evaluation Score Delta (I - C)": "6.40",
+        "Required Margin for Displacement": "2.50",
+        "Epoch Gate Status": "Locked for 500 steps"
+      },
+      "avg_latency_us": 0.398,
+      "status": "PASSED"
+    },
+    "ESFM": {
+      "id": "ESFM",
+      "name": "ES-at-Scale Forgetting Mitigation Anchor",
+      "suite": "quillan",
+      "primaryResult": 45.202600000000004,
+      "speedupFactor": 1.1,
+      "secondaryMetrics": {
+        "Elastic Pull Magnitude": "0.00260",
+        "Historical Centroid Retention": "94.57%",
+        "Anchor Trigger Status": "Applied this step"
+      },
+      "avg_latency_us": 0.468,
+      "status": "PASSED"
+    },
+    "NV_JQLD": {
+      "id": "NV_JQLD",
+      "name": "Joshua's Quantum Leap Dynamo (Min-Maxed)",
+      "suite": "nextverse",
+      "primaryResult": 718.754551008725,
+      "speedupFactor": 653.4132281897499,
+      "secondaryMetrics": {
+        "Speedup Factor": "653.4x",
+        "Rowen Physics Optimization": "O(n√n) Active (-40% complexity)",
+        "Grover Lookup Boost": "4.80 exp units"
+      },
+      "avg_latency_us": 0.633,
+      "status": "PASSED"
+    },
+    "NV_LVVM": {
+      "id": "NV_LVVM",
+      "name": "Lee's Virtual Velocity Matrix (1:1 VM Scaling)",
+      "suite": "nextverse",
+      "primaryResult": 94767.89411764705,
+      "speedupFactor": 2.1509803921568627,
+      "secondaryMetrics": {
+        "Replication Multiplier": "2.151x",
+        "Inherited Core Q": "44058.0 GHz",
+        "Sync Loss Rate": "2.0% (<1% demo loss)"
+      },
+      "avg_latency_us": 0.67,
+      "status": "PASSED"
+    },
+    "NV_DESS": {
+      "id": "NV_DESS",
+      "name": "Don's Ethical Synapse Shield (DESS)",
+      "suite": "nextverse",
+      "primaryResult": 0.8097570000000001,
+      "speedupFactor": 1.35,
+      "secondaryMetrics": {
+        "Calculated Score (R_t)": "0.8098",
+        "Required Floor (R_min)": "0.80",
+        "Evaluation Latency": "<45 ms per checkpoint (Grover 60% faster)"
+      },
+      "avg_latency_us": 0.462,
+      "status": "PASSED"
+    },
+    "NV_JRRN": {
+      "id": "NV_JRRN",
+      "name": "Joshua's Rapid Reflex Neuron (JRRN)",
+      "suite": "nextverse",
+      "primaryResult": 6.777777777777778,
+      "speedupFactor": 11.80327868852459,
+      "secondaryMetrics": {
+        "Response Time": "6.78 ms",
+        "LRU Cache Acceleration": "+25%",
+        "Query Throughput": "147.5 req/s"
+      },
+      "avg_latency_us": 0.716,
+      "status": "PASSED"
+    },
+    "NV_LRPP": {
+      "id": "NV_LRPP",
+      "name": "Lee's Recursive Power Pulse (Agent Boost)",
+      "suite": "nextverse",
+      "primaryResult": 104076.59113300493,
+      "speedupFactor": 1.18113158941628,
+      "secondaryMetrics": {
+        "Cumulative Power (C_t)": "104077 cycles",
+        "Agent Boost Factor": "+18.1% power",
+        "Active Agents": "10/50 max agents"
+      },
+      "avg_latency_us": 0.503,
+      "status": "PASSED"
+    },
+    "NV_DVVE": {
+      "id": "NV_DVVE",
+      "name": "Don's Visual Vortex Engine (DVVE)",
+      "suite": "nextverse",
+      "primaryResult": 99029.12621359223,
+      "speedupFactor": 1.1650485436893203,
+      "secondaryMetrics": {
+        "Effective Particle Throughput": "99.0k particles",
+        "Estimated Framerate": "49.5 FPS @ 1080p",
+        "Adaptive LOD Scaling": "+20% Boost"
+      },
+      "avg_latency_us": 0.836,
+      "status": "PASSED"
+    },
+    "NV_JSSC": {
+      "id": "NV_JSSC",
+      "name": "Joshua's Social Symphony Core (JSSC)",
+      "suite": "nextverse",
+      "primaryResult": 18388.311504866342,
+      "speedupFactor": 1.2,
+      "secondaryMetrics": {
+        "Social Interaction Capacity": "18388 ops/s",
+        "Estimated State Sync Latency": "44.2 ms (<100ms target)",
+        "Total Social Entities": "200 NPCs + 50 Players"
+      },
+      "avg_latency_us": 0.561,
+      "status": "PASSED"
+    },
+    "NV_LSSS": {
+      "id": "NV_LSSS",
+      "name": "Lee's Sonic Surge Studio (DAW 96kHz)",
+      "suite": "nextverse",
+      "primaryResult": 123.15270935960592,
+      "speedupFactor": 1.2315270935960592,
+      "secondaryMetrics": {
+        "Simultaneous 96kHz Tracks": "123 channels",
+        "DSP Buffer Latency": "1.07 ms (<50ms target)",
+        "SIMD Vectorization Efficiency": "98.5% Real-Time"
+      },
+      "avg_latency_us": 0.452,
+      "status": "PASSED"
+    },
+    "NV_DNNL": {
+      "id": "NV_DNNL",
+      "name": "Don's Neural Nexus Link (DNNL)",
+      "suite": "nextverse",
+      "primaryResult": 10.988023952095809,
+      "speedupFactor": 4.550408719346049,
+      "secondaryMetrics": {
+        "Network Latency (L_t)": "10.99 ms (<20ms target)",
+        "Effective Channel Throughput": "1670 MB/s",
+        "Self-Healing Caching Status": "Optimal Direct Link"
+      },
+      "avg_latency_us": 0.477,
+      "status": "PASSED"
+    },
+    "NV_JHFR": {
+      "id": "NV_JHFR",
+      "name": "Joshua's Holistic Fusion Reactor (Compound Turbo)",
+      "suite": "nextverse",
+      "primaryResult": 31.196631572769874,
+      "speedupFactor": 31.196631572769874,
+      "secondaryMetrics": {
+        "Overall Multiplicative Gain": "31.2x Compound Turbo",
+        "Total System Overhead": "33.0% (<25% Target)",
+        "Monitoring Optimization Gain": "+20%"
+      },
+      "avg_latency_us": 0.846,
+      "status": "PASSED"
+    },
+    "NV_LMCB": {
+      "id": "NV_LMCB",
+      "name": "Lee's Moral Compass Beacon (99.5% Checksum)",
+      "suite": "nextverse",
+      "primaryResult": 96.92470588235295,
+      "speedupFactor": 1.45,
+      "secondaryMetrics": {
+        "Calibration Score (E_t)": "0.8280",
+        "Acceptance Floor (E_min)": "0.85",
+        "Compliance Across 20k Points": "96.92%"
+      },
+      "avg_latency_us": 0.723,
+      "status": "PASSED"
+    },
+    "F_NEWTON_2ND": {
+      "id": "F_NEWTON_2ND",
+      "name": "Newton's Second Law",
+      "suite": "foundation",
+      "primaryResult": 6,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "Force (F)": "6.00 N"
+      },
+      "avg_latency_us": 0.247,
+      "status": "PASSED"
+    },
+    "F_KINETIC": {
+      "id": "F_KINETIC",
+      "name": "Kinetic Energy",
+      "suite": "foundation",
+      "primaryResult": 9,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "Energy (K)": "9.00 J"
+      },
+      "avg_latency_us": 0.247,
+      "status": "PASSED"
+    },
+    "F_GRAVITATION": {
+      "id": "F_GRAVITATION",
+      "name": "Newton's Law of Gravitation",
+      "suite": "foundation",
+      "primaryResult": 9816.243509027341,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "Force (F)": "9.816e+3 N",
+        "G": "6.674e-11"
+      },
+      "avg_latency_us": 0.15,
+      "status": "PASSED"
+    },
+    "F_ORBITAL": {
+      "id": "F_ORBITAL",
+      "name": "Circular Orbital Velocity",
+      "suite": "foundation",
+      "primaryResult": 7671.033155168897,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "v_orbit": "7.67 km/s"
+      },
+      "avg_latency_us": 0.234,
+      "status": "PASSED"
+    },
+    "F_ESCAPE": {
+      "id": "F_ESCAPE",
+      "name": "Escape Velocity",
+      "suite": "foundation",
+      "primaryResult": 11183.853306979056,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "v_esc": "11.18 km/s"
+      },
+      "avg_latency_us": 0.313,
+      "status": "PASSED"
+    },
+    "F_SHO": {
+      "id": "F_SHO",
+      "name": "SHO Period",
+      "suite": "foundation",
+      "primaryResult": 1.9869176531592203,
+      "speedupFactor": 0.5032921210448703,
+      "secondaryMetrics": {
+        "Period (T)": "1.987 s",
+        "Freq": "0.50 Hz"
+      },
+      "avg_latency_us": 0.453,
+      "status": "PASSED"
+    },
+    "F_IDEAL_GAS": {
+      "id": "F_IDEAL_GAS",
+      "name": "Ideal Gas Law",
+      "suite": "foundation",
+      "primaryResult": 292.4945874428675,
+      "speedupFactor": 1.025660004934616,
+      "secondaryMetrics": {
+        "Temp (T)": "292.5 K"
+      },
+      "avg_latency_us": 0.267,
+      "status": "PASSED"
+    },
+    "F_STEFAN": {
+      "id": "F_STEFAN",
+      "name": "Stefan–Boltzmann Law",
+      "suite": "foundation",
+      "primaryResult": 52.4175057,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "Power (P)": "52.42 W"
+      },
+      "avg_latency_us": 0.312,
+      "status": "PASSED"
+    },
+    "F_LORENTZ": {
+      "id": "F_LORENTZ",
+      "name": "Lorentz Factor",
+      "suite": "foundation",
+      "primaryResult": 1.0005567897052046,
+      "speedupFactor": 1.0005567897052046,
+      "secondaryMetrics": {
+        "γ": "1.000557"
+      },
+      "avg_latency_us": 0.257,
+      "status": "PASSED"
+    },
+    "F_HEISENBERG": {
+      "id": "F_HEISENBERG",
+      "name": "Heisenberg Uncertainty",
+      "suite": "foundation",
+      "primaryResult": 5.272859e-26,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "Δp_min": "5.273e-26 kg·m/s"
+      },
+      "avg_latency_us": 0.226,
+      "status": "PASSED"
+    },
+    "F_MAXWELL_GAUSS_E": {
+      "id": "F_MAXWELL_GAUSS_E",
+      "name": "Gauss's Law (electric)",
+      "suite": "foundation",
+      "primaryResult": 112943.30246216399,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "E flux": "1.129e+5 V/m"
+      },
+      "avg_latency_us": 0.156,
+      "status": "PASSED"
+    },
+    "F_LANDAUER": {
+      "id": "F_LANDAUER",
+      "name": "Landauer Bound (E_ICE floor)",
+      "suite": "foundation",
+      "primaryResult": 2.870978885078724e-21,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "E_min": "2.871e-21 J/bit"
+      },
+      "avg_latency_us": 0.137,
+      "status": "PASSED"
+    },
+    "C_ENTROPY": {
+      "id": "C_ENTROPY",
+      "name": "Shannon Entropy",
+      "suite": "foundation",
+      "primaryResult": 3,
+      "speedupFactor": 1.375,
+      "secondaryMetrics": {
+        "H (bits)": "3.000"
+      },
+      "avg_latency_us": 0.434,
+      "status": "PASSED"
+    },
+    "C_KL": {
+      "id": "C_KL",
+      "name": "Kullback–Leibler Divergence",
+      "suite": "foundation",
+      "primaryResult": 0.08228287850505181,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "DKL (nats)": "0.0823"
+      },
+      "avg_latency_us": 0.439,
+      "status": "PASSED"
+    },
+    "C_BAYES": {
+      "id": "C_BAYES",
+      "name": "Bayes' Theorem",
+      "suite": "foundation",
+      "primaryResult": 40.00000000000001,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "Posterior": "0.4000"
+      },
+      "avg_latency_us": 3.909,
+      "status": "PASSED"
+    },
+    "C_HANDSHAKE": {
+      "id": "C_HANDSHAKE",
+      "name": "Handshaking Lemma",
+      "suite": "foundation",
+      "primaryResult": 1122,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "Σdeg": "1122",
+        "K34 edges": "561 (34·33/2)"
+      },
+      "avg_latency_us": 0.111,
+      "status": "PASSED"
+    },
+    "C_CATALAN": {
+      "id": "C_CATALAN",
+      "name": "Catalan Number",
+      "suite": "foundation",
+      "primaryResult": 42,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "C_n": "42"
+      },
+      "avg_latency_us": 0.785,
+      "status": "PASSED"
+    },
+    "C_FIB": {
+      "id": "C_FIB",
+      "name": "Fibonacci Recurrence",
+      "suite": "foundation",
+      "primaryResult": 55,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "F_n": "55"
+      },
+      "avg_latency_us": 0.208,
+      "status": "PASSED"
+    },
+    "C_MASTER": {
+      "id": "C_MASTER",
+      "name": "Master Theorem (recurrence)",
+      "suite": "foundation",
+      "primaryResult": 1,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "Regime": "Θ(n^1 log n)",
+        "log_b(a)": "1.000"
+      },
+      "avg_latency_us": 0.667,
+      "status": "PASSED"
+    },
+    "C_MI": {
+      "id": "C_MI",
+      "name": "Mutual Information",
+      "suite": "foundation",
+      "primaryResult": 3.9,
+      "speedupFactor": 1.3900000000000001,
+      "secondaryMetrics": {
+        "I(X;Y)": "3.900 bits"
+      },
+      "avg_latency_us": 5.024,
+      "status": "PASSED"
+    },
+    "C_DFT_K1": {
+      "id": "C_DFT_K1",
+      "name": "DFT k=1 Magnitude",
+      "suite": "foundation",
+      "primaryResult": 1,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "|X_1|": "1.0000",
+        "N": "16"
+      },
+      "avg_latency_us": 0.197,
+      "status": "PASSED"
+    },
+    "C_CAYLEY": {
+      "id": "C_CAYLEY",
+      "name": "Cayley's Formula",
+      "suite": "foundation",
+      "primaryResult": 16,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "Trees": "16"
+      },
+      "avg_latency_us": 0.069,
+      "status": "PASSED"
+    },
+    "M_SIGMOID": {
+      "id": "M_SIGMOID",
+      "name": "Sigmoid (Logistic)",
+      "suite": "foundation",
+      "primaryResult": 0.6224593312018546,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "σ(x)": "0.6225",
+        "σ'": "0.2350"
+      },
+      "avg_latency_us": 0.427,
+      "status": "PASSED"
+    },
+    "M_TANH": {
+      "id": "M_TANH",
+      "name": "Hyperbolic Tangent",
+      "suite": "foundation",
+      "primaryResult": 0.46211715726000974,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "tanh(x)": "0.4621"
+      },
+      "avg_latency_us": 9.47,
+      "status": "PASSED"
+    },
+    "M_SOFTMAX3": {
+      "id": "M_SOFTMAX3",
+      "name": "Softmax (3-logit)",
+      "suite": "foundation",
+      "primaryResult": 62.853171921176255,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "Top-1": "62.9%",
+        "Sum": "1.000"
+      },
+      "avg_latency_us": 0.341,
+      "status": "PASSED"
+    },
+    "M_CE": {
+      "id": "M_CE",
+      "name": "Categorical Cross-Entropy",
+      "suite": "foundation",
+      "primaryResult": 0.35667494393873245,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "CE (nats)": "0.3567"
+      },
+      "avg_latency_us": 0.236,
+      "status": "PASSED"
+    },
+    "M_MSE": {
+      "id": "M_MSE",
+      "name": "Mean Squared Error",
+      "suite": "foundation",
+      "primaryResult": 0.25,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "MSE": "0.2500"
+      },
+      "avg_latency_us": 0.212,
+      "status": "PASSED"
+    },
+    "M_GD": {
+      "id": "M_GD",
+      "name": "Gradient Descent Update",
+      "suite": "foundation",
+      "primaryResult": 99.38,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "θ_new": "99.380",
+        "Δ": "0.620"
+      },
+      "avg_latency_us": 0.407,
+      "status": "PASSED"
+    },
+    "M_NORMAL_EQ": {
+      "id": "M_NORMAL_EQ",
+      "name": "Normal Equation (2D)",
+      "suite": "foundation",
+      "primaryResult": 1.2128785512842124,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "β̂₀": "1.1818",
+        "β̂₁": "0.2727",
+        "det": "11.000"
+      },
+      "avg_latency_us": 0.553,
+      "status": "PASSED"
+    },
+    "M_ATTENTION": {
+      "id": "M_ATTENTION",
+      "name": "Scaled Dot-Product Attention (2×2)",
+      "suite": "foundation",
+      "primaryResult": 0.742816684773193,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "attn_w": "0.7428",
+        "scale": "1/√2"
+      },
+      "avg_latency_us": 0.311,
+      "status": "PASSED"
+    },
+    "M_GAUSSIAN": {
+      "id": "M_GAUSSIAN",
+      "name": "Gaussian (Normal) PDF",
+      "suite": "foundation",
+      "primaryResult": 0.3520653267642995,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "p(x)": "0.3521"
+      },
+      "avg_latency_us": 0.248,
+      "status": "PASSED"
+    },
+    "M_BELLMAN": {
+      "id": "M_BELLMAN",
+      "name": "Bellman Expectation (Q)",
+      "suite": "foundation",
+      "primaryResult": 5.95,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "Q": "5.950"
+      },
+      "avg_latency_us": 0.221,
+      "status": "PASSED"
+    },
+    "M_RETURN": {
+      "id": "M_RETURN",
+      "name": "Return (Cumulative Reward)",
+      "suite": "foundation",
+      "primaryResult": 5,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "R_n": "5.00"
+      },
+      "avg_latency_us": 0.202,
+      "status": "PASSED"
+    },
+    "M_CONDH": {
+      "id": "M_CONDH",
+      "name": "Conditional Entropy",
+      "suite": "foundation",
+      "primaryResult": 0.9000000000000004,
+      "speedupFactor": 1,
+      "secondaryMetrics": {
+        "H(X|Y)": "0.900 bits"
+      },
+      "avg_latency_us": 0.222,
+      "status": "PASSED"
+    }
+  }
+}
