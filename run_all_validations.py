@@ -14,6 +14,14 @@ import importlib.util
 from pathlib import Path
 
 VAL_DIR = Path(__file__).resolve().parent
+REPO_ROOT = next(
+    (p for p in [VAL_DIR.parent, *VAL_DIR.parents, Path(r"C:\02_QUILLAN")] if (p / "03 - Training & Model").exists()),
+    Path(r"C:\02_QUILLAN"),
+)
+for sub in ["03 - Training & Model/scripts", "kernels", "daemons"]:
+    p_sub = str(REPO_ROOT / sub)
+    if p_sub not in sys.path:
+        sys.path.insert(0, p_sub)
 
 
 def load_module_from_file(module_name: str, file_path: Path):
