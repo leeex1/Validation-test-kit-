@@ -1,13 +1,13 @@
 {
-  "bitnet_dense_time_ms": 229.76,
-  "bitnet_ternary_time_ms": 415.69,
+  "bitnet_dense_time_ms": 322.17,
+  "bitnet_ternary_time_ms": 701.72,
   "memory_compression_ratio": "20.0x",
-  "aqcs_sequential_ms": 1080.57,
-  "aqcs_vectorized_ms": 12.13,
-  "aqcs_speedup": "89.09x",
-  "jqld_time_ms": 88.46,
+  "aqcs_sequential_ms": 1184.41,
+  "aqcs_vectorized_ms": 12.86,
+  "aqcs_speedup": "92.13x",
+  "jqld_time_ms": 77.01,
   "os_priority": "HIGH_PRIORITY_CLASS",
-  "ram_reclaimed_mb": 157.7,
-  "composite_speedup": "46.68x",
-  "timestamp": 1789139733.261575
+  "ram_reclaimed_mb": 151.2,
+  "composite_speedup": "48.05x",
+  "timestamp": 1790887210.839716
 }

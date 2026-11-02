@@ -26,31 +26,40 @@ def apply_deep_system_tuning():
 
     actions = []
 
-    # 1. NTFS File System I/O Tuning
+    # 1. NTFS File System I/O Tuning (all three need admin; report honestly)
     if sys.platform == 'win32':
         try:
             # Disable Last Access Time updates on file reads (Eliminates disk writes during training)
-            subprocess.run(['fsutil', 'behavior', 'set', 'disablelastaccess', '1'],
+            r = subprocess.run(['fsutil', 'behavior', 'set', 'disablelastaccess', '1'],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            actions.append("Disabled NTFS LastAccess Timestamps (Eliminates disk write overhead on reads)")
-        except Exception:
-            pass
+            if r.returncode == 0:
+                actions.append("Disabled NTFS LastAccess Timestamps (Eliminates disk write overhead on reads)")
+            else:
+                actions.append("LastAccess SKIPPED (needs admin)")
+        except Exception as e:
+            actions.append("LastAccess SKIPPED (%s)" % (e,))
 
         try:
             # Disable legacy 8.3 DOS filename generation (Speeds up directory index traversal)
-            subprocess.run(['fsutil', 'behavior', 'set', 'disable8dot3', '1'],
+            r = subprocess.run(['fsutil', 'behavior', 'set', 'disable8dot3', '1'],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            actions.append("Disabled 8.3 Short Filename Creation (Accelerates deep directory traversal)")
-        except Exception:
-            pass
+            if r.returncode == 0:
+                actions.append("Disabled 8.3 Short Filename Creation (Accelerates deep directory traversal)")
+            else:
+                actions.append("8dot3 SKIPPED (needs admin)")
+        except Exception as e:
+            actions.append("8dot3 SKIPPED (%s)" % (e,))
 
         try:
             # Optimize NTFS memory usage buffer
-            subprocess.run(['fsutil', 'behavior', 'set', 'memoryusage', '2'],
+            r = subprocess.run(['fsutil', 'behavior', 'set', 'memoryusage', '2'],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            actions.append("Configured NTFS Large Memory Cache (Max RAM file buffering)")
-        except Exception:
-            pass
+            if r.returncode == 0:
+                actions.append("Configured NTFS Large Memory Cache (Max RAM file buffering)")
+            else:
+                actions.append("NTFS memory cache SKIPPED (needs admin)")
+        except Exception as e:
+            actions.append("NTFS memory cache SKIPPED (%s)" % (e,))
 
     # 2. Python & BLAS Environment Variables for Fast-Path Execution
     env_vars = {
@@ -74,4 +83,7 @@ def apply_deep_system_tuning():
     print("========================================================================")
 
 if __name__ == '__main__':
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from elevate import ensure_admin_or_offer
+    ensure_admin_or_offer(os.path.abspath(__file__), ['fsutil NTFS behavior (lastaccess, 8dot3, memoryusage)'])
     apply_deep_system_tuning()

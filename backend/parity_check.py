@@ -4,8 +4,8 @@
 ⚡ CROSS-RUNTIME NUMERICAL PARITY VALIDATOR (Python PyTorch vs TypeScript V8)
 ----------------------------------------------------------------------------
 Validates exact bitwise and numerical parity between:
-  1. Python PyTorch formula toolkit (C:\02_QUILLAN\03 - Training & Model\scripts\quillan_formula_toolkit.py)
-  2. TypeScript validation test kit (C:\02_QUILLAN\09 - Projects\Validation-test-kit\backend\ts_formula_evaluation_report.json)
+  1. Python PyTorch formula toolkit (C:\02_QUILLAN\03 - Training & Model\\scripts\\quillan_formula_toolkit.py)
+  2. TypeScript validation test kit (C:\02_QUILLAN\09 - Projects\\Validation-test-kit\backend\ts_formula_evaluation_report.json)
 Ensuring local CPU calculations match across runtimes within 1e-4 relative tolerance.
 """
 
@@ -18,7 +18,7 @@ import torch
 sys.path.insert(0, r"C:\02_QUILLAN\03 - Training & Model\scripts")
 from quillan_formula_toolkit import PhysicsLayer, CSLayer, MLLayer
 
-report_path = r"C:\02_QUILLAN\09 - Projects\Validation-test-kit\backend\ts_formula_evaluation_report.json"
+report_path = r"C:\02_QUILLAN\09 - Projects\\Validation-test-kit\backend\ts_formula_evaluation_report.json"
 if not os.path.exists(report_path):
     print(f"Error: {report_path} not found.")
     sys.exit(1)
@@ -88,7 +88,7 @@ print(f"  PARITY SUMMARY: {matched}/{total} ({100.0 * matched / total:.1f}%) Num
 print("  Zero Runtime Discrepancies Detected. Local Calculations Fully Verified.")
 print("=" * 72)
 
-out_parity = r"C:\02_QUILLAN\09 - Projects\Validation-test-kit\backend\parity_validation_report.json"
+out_parity = r"C:\02_QUILLAN\09 - Projects\\Validation-test-kit\backend\parity_validation_report.json"
 with open(out_parity, "w", encoding="utf-8") as f:
     json.dump({
         "matched": matched,

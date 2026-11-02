@@ -87,7 +87,7 @@ def enable_i9_turbo_profile():
             mem_before = psutil.virtual_memory().used
             ctypes.windll.psapi.EmptyWorkingSet(ctypes.c_void_p(-1))
             mem_after = psutil.virtual_memory().used
-            freed = max((mem_before - mem_after) / (1024 * 1024), 120.0)
+            freed = round((mem_before - mem_after) / (1024 * 1024), 1)  # measured, no floor
             optimizations_applied.append(f"Purged WorkingSet Pages: {freed:.1f} MB RAM Reclaimed for L3 Cache")
         except Exception:
             pass

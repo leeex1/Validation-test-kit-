@@ -39,40 +39,55 @@ def optimize_network_stack():
     if sys.platform == 'win32':
         # 1. Enable ECN (Explicit Congestion Notification)
         try:
-            subprocess.run(['netsh', 'int', 'tcp', 'set', 'global', 'ecncapability=enabled'],
+            r = subprocess.run(['netsh', 'int', 'tcp', 'set', 'global', 'ecncapability=enabled'],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            log.append("Enabled ECN (Explicit Congestion Notification - Zero Packet Loss)")
-        except Exception:
-            pass
+            if r.returncode == 0:
+                log.append("Enabled ECN (Explicit Congestion Notification - Zero Packet Loss)")
+            else:
+                log.append("ECN SKIPPED (needs admin)")
+        except Exception as e:
+            log.append("ECN SKIPPED (%s)" % (e,))
 
         # 2. Configure High-Throughput Congestion Provider (CUBIC / CTCP)
         try:
-            subprocess.run(['netsh', 'int', 'tcp', 'set', 'supplemental', 'template=custom', 'congestionprovider=cubic'],
+            r = subprocess.run(['netsh', 'int', 'tcp', 'set', 'supplemental', 'template=custom', 'congestionprovider=cubic'],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            log.append("Configured TCP Congestion Provider -> CUBIC (Fast Recovery & Throughput)")
+            if r.returncode == 0:
+                log.append("Configured TCP Congestion Provider -> CUBIC (Fast Recovery & Throughput)")
+            else:
+                raise RuntimeError("cubic rc=%s" % (r.returncode,))
         except Exception:
             try:
-                subprocess.run(['netsh', 'int', 'tcp', 'set', 'global', 'congestionprovider=ctcp'],
+                r2 = subprocess.run(['netsh', 'int', 'tcp', 'set', 'global', 'congestionprovider=ctcp'],
                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-                log.append("Configured TCP Congestion Provider -> CTCP (Compound TCP)")
-            except Exception:
-                pass
+                if r2.returncode == 0:
+                    log.append("Configured TCP Congestion Provider -> CTCP (Compound TCP)")
+                else:
+                    log.append("Congestion provider SKIPPED (needs admin)")
+            except Exception as e:
+                log.append("Congestion provider SKIPPED (%s)" % (e,))
 
         # 3. Ensure Receive Window Auto-Tuning is Normal / Uncapped
         try:
-            subprocess.run(['netsh', 'int', 'tcp', 'set', 'global', 'autotuninglevel=normal'],
+            r = subprocess.run(['netsh', 'int', 'tcp', 'set', 'global', 'autotuninglevel=normal'],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            log.append("TCP Window Auto-Tuning Level: NORMAL (Unlocks 16MB Window Buffer)")
-        except Exception:
-            pass
+            if r.returncode == 0:
+                log.append("TCP Window Auto-Tuning Level: NORMAL (Unlocks 16MB Window Buffer)")
+            else:
+                log.append("Auto-tuning SKIPPED (needs admin)")
+        except Exception as e:
+            log.append("Auto-tuning SKIPPED (%s)" % (e,))
 
         # 4. Enable RSS (Receive-Side Scaling) across all CPU Cores
         try:
-            subprocess.run(['netsh', 'int', 'tcp', 'set', 'global', 'rss=enabled'],
+            r = subprocess.run(['netsh', 'int', 'tcp', 'set', 'global', 'rss=enabled'],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            log.append("Enabled Multi-Core Receive-Side Scaling (RSS - No Single-Core Packet Bottleneck)")
-        except Exception:
-            pass
+            if r.returncode == 0:
+                log.append("Enabled Multi-Core Receive-Side Scaling (RSS - No Single-Core Packet Bottleneck)")
+            else:
+                log.append("RSS SKIPPED (needs admin)")
+        except Exception as e:
+            log.append("RSS SKIPPED (%s)" % (e,))
 
         # 5. Flush and Reset DNS Resolver Cache
         try:
@@ -120,4 +135,7 @@ def optimize_network_stack():
     print("========================================================================")
 
 if __name__ == '__main__':
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from elevate import ensure_admin_or_offer
+    ensure_admin_or_offer(os.path.abspath(__file__), ['netsh ECN / CUBIC / auto-tuning / RSS'])
     optimize_network_stack()

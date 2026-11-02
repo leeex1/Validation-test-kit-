@@ -74,15 +74,18 @@ def tune_total_box():
     if sys.platform == 'win32':
         try:
             # Lock minimum/maximum processor state to 100% (eliminates SpeedStep downclock lag)
-            subprocess.run(['powercfg', '/setacvalueindex', 'SCHEME_CURRENT', 'SUB_PROCESSOR', 'PROCTHROTTLEMIN', '100'],
+            r1 = subprocess.run(['powercfg', '/setacvalueindex', 'SCHEME_CURRENT', 'SUB_PROCESSOR', 'PROCTHROTTLEMIN', '100'],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            subprocess.run(['powercfg', '/setacvalueindex', 'SCHEME_CURRENT', 'SUB_PROCESSOR', 'PROCTHROTTLEMAX', '100'],
+            r2 = subprocess.run(['powercfg', '/setacvalueindex', 'SCHEME_CURRENT', 'SUB_PROCESSOR', 'PROCTHROTTLEMAX', '100'],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            subprocess.run(['powercfg', '/setactive', 'SCHEME_CURRENT'],
+            r3 = subprocess.run(['powercfg', '/setactive', 'SCHEME_CURRENT'],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            tuning_log.append("CPU Power Policy Locked to 100% Floor (Zero Frequency Drops under load)")
-        except Exception:
-            pass
+            if r1.returncode == 0 and r2.returncode == 0 and r3.returncode == 0:
+                tuning_log.append("CPU Power Policy Locked to 100% Floor (Zero Frequency Drops under load)")
+            else:
+                tuning_log.append("CPU Power Policy SKIPPED (needs admin, rc=%s/%s/%s)" % (r1.returncode, r2.returncode, r3.returncode))
+        except Exception as e:
+            tuning_log.append("CPU Power Policy SKIPPED (%s)" % (e,))
 
     # -------------------------------------------------------------------------
     # 3. RAM WORKINGSET COMPACTION & STANDBY LIST PURGE
@@ -107,7 +110,7 @@ def tune_total_box():
                 except Exception:
                     continue
             mem_after = psutil.virtual_memory().used
-            freed_mb = max((mem_before - mem_after) / (1024 * 1024), 250.0)
+            freed_mb = round((mem_before - mem_after) / (1024 * 1024), 1)  # measured, no floor
             tuning_log.append(f"Purged Standby List & WorkingSets: {freed_mb:.1f} MB RAM Reclaimed for L3 Cache")
         except Exception:
             pass
@@ -167,4 +170,7 @@ def tune_total_box():
     print("=" * 75)
 
 if __name__ == '__main__':
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from elevate import ensure_admin_or_offer
+    ensure_admin_or_offer(os.path.abspath(__file__), ['CPU power-floor lock', 'MMCSS registry keys'])
     tune_total_box()

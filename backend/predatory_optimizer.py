@@ -61,13 +61,16 @@ def run_predatory_hunt():
     if sys.platform == 'win32':
         try:
             # Force TCP Chimney Offload & NetDMA for hardware offloading
-            subprocess.run(['netsh', 'int', 'ip', 'set', 'global', 'taskoffload=enabled'],
+            r1 = subprocess.run(['netsh', 'int', 'ip', 'set', 'global', 'taskoffload=enabled'],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            subprocess.run(['netsh', 'int', 'tcp', 'set', 'global', 'timestamps=disabled'],
+            r2 = subprocess.run(['netsh', 'int', 'tcp', 'set', 'global', 'timestamps=disabled'],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            kills.append("Hardware Offload Enabled & TCP Timestamp Headers Stripped (Reduced Packet Overhead)")
-        except Exception:
-            pass
+            if r1.returncode == 0 and r2.returncode == 0:
+                kills.append("Hardware Offload Enabled & TCP Timestamp Headers Stripped (Reduced Packet Overhead)")
+            else:
+                kills.append("Hardware offload/timestamps SKIPPED (needs admin, rc=%s/%s)" % (r1.returncode, r2.returncode))
+        except Exception as e:
+            kills.append("Hardware offload SKIPPED (%s)" % (e,))
 
     # -------------------------------------------------------------------------
     # 3. HUNTING PROCESS PRIORITY & PROCESSOR QUANTUM BOOST
@@ -106,7 +109,7 @@ def run_predatory_hunt():
                 except Exception:
                     continue
             mem_after = psutil.virtual_memory().used
-            freed = max((mem_before - mem_after) / (1024 * 1024), 320.0)
+            freed = round((mem_before - mem_after) / (1024 * 1024), 1)  # measured, no floor
             kills.append(f"Purged Stale Process Memory: {freed:.1f} MB RAM Reclaimed for L3/SRAM Cache")
         except Exception:
             pass
@@ -150,4 +153,7 @@ def run_predatory_hunt():
     print("=" * 75)
 
 if __name__ == '__main__':
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from elevate import ensure_admin_or_offer
+    ensure_admin_or_offer(os.path.abspath(__file__), ['service stops', 'netsh offload/timestamps'])
     run_predatory_hunt()

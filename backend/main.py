@@ -11,6 +11,7 @@ import sys
 import os
 import json
 import time
+import socket
 import subprocess
 import ctypes
 from http.server import HTTPServer, BaseHTTPRequestHandler
@@ -99,15 +100,15 @@ def apply_throttlestop_pc_optimization():
     # 1. Power Scheme & CPU Unparking (Windows)
     if sys.platform == 'win32':
         try:
-            # High Performance GUID
-            subprocess.run(['powercfg', '/setactive', '8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c'], 
+            # Ultimate Performance GUID (machine-local duplicate; canonical e9a42b02 not activatable on this box)
+            subprocess.run(['powercfg', '/setactive', 'fc698e3d-7323-4884-a632-ed97a464f85a'], 
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             # Set minimum CPU state to 100% to prevent clock down-throttling
             subprocess.run(['powercfg', '/setacvalueindex', 'SCHEME_CURRENT', 'SUB_PROCESSOR', 'PROCTHROTTLEMIN', '100'],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             subprocess.run(['powercfg', '/setactive', 'SCHEME_CURRENT'],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            actions.append("CPU Core Unparking & Power Governor locked to 100% High Performance")
+            actions.append("CPU Core Unparking & Power Governor locked to 100% Ultimate Performance")
         except Exception as e:
             actions.append(f"Power scheme tuning: {e}")
 
@@ -270,6 +271,14 @@ class BackendHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
 def run():
+    # Singleton: if a backend already serves :5000, exit instead of piling up.
+    try:
+        probe = socket.create_connection(('127.0.0.1', PORT), timeout=1.0)
+        probe.close()
+        print("Backend already serving on port %d; refusing duplicate." % (PORT,))
+        return
+    except Exception:
+        pass
     server = HTTPServer(('127.0.0.1', PORT), BackendHandler)
     print(f"Validation-test-kit Optimizer Backend listening on http://127.0.0.1:{PORT}")
     try:

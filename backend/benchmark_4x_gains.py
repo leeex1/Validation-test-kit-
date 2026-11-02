@@ -178,11 +178,11 @@ def run_full_validation_suite():
 
         del temp_data
         mem_final = psutil.virtual_memory()
-        freed_mb = (mem_with_data.used - mem_final.used) / (1024 * 1024)
+        freed_mb = round((mem_with_data.used - mem_final.used) / (1024 * 1024), 1)  # measured, no floor
         print(f"  - Host Process Scheduling: HIGH_PRIORITY_CLASS (Priority {proc.nice()})")
-        print(f"  - RAM Reclaimed via Compaction: {max(freed_mb, 28.5):.1f} MB")
+        print(f"  - RAM Reclaimed via Compaction: {freed_mb:.1f} MB")
         results['os_priority'] = 'HIGH_PRIORITY_CLASS'
-        results['ram_reclaimed_mb'] = round(max(freed_mb, 28.5), 1)
+        results['ram_reclaimed_mb'] = freed_mb
 
     # -------------------------------------------------------------------------
     # TEST 5: Overall Composite Performance Gain Calculation
