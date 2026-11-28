@@ -627,9 +627,14 @@ export const FOUNDATION_FORMULAS: FormulaDefinition[] = [
     ],
     calculation: (p): FormulaCalculationResult => {
       const dk = 2;
-      const s = (p.q11 * p.ks + p.q12 * p.ks) / Math.sqrt(dk);
-      const w = 1 / (1 + Math.exp(-s));
-      return { primaryResult: w, speedupFactor: 1, secondaryMetrics: { 'attn_w': w.toFixed(4), 'scale': `1/√${dk}` }, simulatedLoadEstimate: { cpu: 'Low', gpu: 'Low', ram: 'Low', thermodynamic: 3 } };
+      // True 2-key softmax attention: k1=[ks,0] -> v1=[1,0], k2=[0,ks] -> v2=[0,1].
+      const s1 = (p.q11 * p.ks) / Math.sqrt(dk);
+      const s2 = (p.q12 * p.ks) / Math.sqrt(dk);
+      const m = Math.max(s1, s2);
+      const e1 = Math.exp(s1 - m), e2 = Math.exp(s2 - m);
+      const w1 = e1 / (e1 + e2), w2 = e2 / (e1 + e2);
+      const out0 = w1; // first component of attention output
+      return { primaryResult: out0, speedupFactor: 1, secondaryMetrics: { 'attn_w1': w1.toFixed(4), 'attn_w2': w2.toFixed(4), 'softmax_sum': (w1+w2).toFixed(4), 'scale': `1/√${dk}` }, simulatedLoadEstimate: { cpu: 'Low', gpu: 'Low', ram: 'Low', thermodynamic: 3 } };
     },
     targetMetric: 'Attention sanity', targetValue: 'w ∈ (0,1)', localTargetValue: '∈ (0,1)',
     validationMethod: 'Vaswani et al. 2017 cross-check', primaryUnit: 'weight',

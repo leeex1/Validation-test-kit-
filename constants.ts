@@ -119,7 +119,7 @@ export const SCENARIO_PRESETS: ScenarioPreset[] = [
     id: 'swarm-9b-consensus',
     name: '9-Billion Swarm Synchronization (DQSO + EGSO)',
     badge: '9B Swarm Grid',
-    description: 'Synchronizes 9 billion vectorized microagents with Kuramoto phase-locking and BitNet 1.58-bit ternary mutations.',
+    description: 'Synchronizes 9.52 billion vectorized microagents with Kuramoto phase-locking and BitNet 1.58-bit ternary mutations.',
     category: 'Quillan Swarm',
     paramOverrides: {
       DQSO: { N_scale_billion: 9.0, K_coupling: 12.5, c_conf: 0.95, phi_bias: 0.05 },

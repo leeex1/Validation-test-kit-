@@ -1,3 +1,8 @@
+// DEMO / HEURISTIC SUITE (verified 2026-11-26): the 11 NextVerse entries below are
+// illustrative simulators with hand-calibrated coefficients, not derived physical laws.
+// Their speedup claims (e.g. 360x-5000x) have no benchmark evidence in this repository.
+// Do not use them as validation evidence for Quillan-Ronin; canonical formulas are in
+// 02 - Knowledge Foundation/knowledge/canonical/FORMULA_REGISTRY.md.
 import { FormulaDefinition, FormulaCalculationResult, SimulatedLoad, FormulaResultData } from './types';
 
 function getLoad(val: number, low: number, med: number, high: number): SimulatedLoad['cpu'] {
